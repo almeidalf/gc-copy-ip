@@ -1,0 +1,109 @@
+/* Reseta o estilo padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Estiliza o container do popup */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+/* Centraliza a imagem e adiciona espaço entre a imagem e a linha */
+img {
+    margin-bottom: 20px;
+}
+
+/* Linha divisória personalizada */
+.divider {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 10px 0;
+}
+
+/* Linha para o texto e botão */
+.command-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilo para o texto */
+.command-row p {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+/* Estilo base para o botão */
+#copyButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease; /* Transição suave de cor */
+}
+
+/* Botão quando o IP não está disponível (vermelho) */
+.not-available {
+    background-color: #f44336; /* Vermelho */
+    cursor: pointer;
+}
+
+/* Botão quando o IP está disponível (verde) */
+.available {
+    background-color: #4CAF50; /* Verde */
+    cursor: pointer;
+}
+
+/* Estilos para o Toast (aparece como notificação no navegador) */
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin: 0 auto;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-size: 17px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.toast.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
